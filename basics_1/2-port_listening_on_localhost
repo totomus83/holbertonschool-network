@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to listen on localhost port 98 and print incoming messages
+
+nc -l 127.0.0.2 98
