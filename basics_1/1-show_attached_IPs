@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that displays all active IPv4 IPs on the machine it’s executed on.
  
-ip_addresses=$(hostname -I)
-for ip in "${ip_addresses[@]}";
-do
-  printf "$ip\n"
-done
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sort -u
